@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{% block title %} <title>Главная</title>{% endblock%}
+{% block body %}
+<div class="header">
+    <h1>Добро пожаловать!</h1>
+    <h6>Время {{time}}</h6>
+</div>
+{% include 'menu.html'%}
+<div class="container">
+    <h1>О нас</h1>
+    <p>Мы яркая компания, предлагающая различные услуги.</p>
+    <p> Сегодня: {{date.day}} {{'0' + date.month|string if (date.month|string)|length == 1 else date.month}}
+        {{date.year}} </p>
+    <div class="image">
+        <img src="https://e-mba.ru/kbuploads/412c53.jpg" alt="Красивая картинка">
+    </div>
+    <p>Нажми на кнопку, чтобы узнать больше:</p>
+    <a class="button" href="#">Узнать больше</a>
+</div>
+{% endblock %}
+

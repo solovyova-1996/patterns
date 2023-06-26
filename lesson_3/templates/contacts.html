@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+{% block title %}   <title>Контакты</title>{% endblock%}
+{% block body %}
+<div class="header">
+    <h1>Контакты</h1>
+    <h6>Время {{time}}</h6>
+</div>
+{% include 'menu.html'%}
+<div class="container">
+    <p> Сегодня: {{date.day}} {{'0' + date.month|string if (date.month|string)|length == 1 else date.month}}
+        {{date.year}} </p>
+    <address>
+        <h2>Контакты</h2>
+        <p>Адрес: 123 улица Технологий, {{location}}, Страна</p>
+        <p>Телефон: +7 123 456 7890</p>
+        <p>Email: info@example.com</p>
+    </address>
+</div>
+{% endblock %}
+
